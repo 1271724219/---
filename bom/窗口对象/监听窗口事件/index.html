@@ -2,7 +2,7 @@
  * @Author: 123 dian.peng.zhao@gds.ey.com
  * @Date: 2023-06-10 20:08:36
  * @LastEditors: 123 dian.peng.zhao@gds.ey.com
- * @LastEditTime: 2023-06-10 20:23:36
+ * @LastEditTime: 2023-06-11 08:14:05
  * @FilePath: \前端文档\bom\窗口对象\监听窗口事件\index.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -15,25 +15,24 @@
     <style>
       .box {
         width: 100px;
-            height: 100px;
+        height: 100px;
       }
     </style>
   </head>
   <body>
-      <div class="box">变色的盒子</div>
+    <div class="box">变色的盒子</div>
     <script>
-
-    //   window.onload = function () {
-    //     // 页面和所有资源都加载完成后执行的代码
-    //     // 使用百度搜索接口获取关于qqq的搜索结果
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open("GET", "./1.json");
-    //     xhr.onload = function () {
-    //       console.log(xhr.responseText);
-    //     //   document.write(xhr.responseText);
-    //     };
-    //     xhr.send();
-    //   };
+        window.onload = function () {
+          // 页面和所有资源都加载完成后执行的代码
+          // 使用百度搜索接口获取关于qqq的搜索结果
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", "./1.json");
+          xhr.onload = function () {
+            console.log(xhr.responseText);
+          //   document.write(xhr.responseText);
+          };
+          xhr.send();
+        };
       window.onresize = function () {
         // 获取窗口的宽
         var width = window.innerWidth;
@@ -52,6 +51,26 @@
           box.style.backgroundColor = "green";
         }
         // 窗口大小改变时执行的代码
+      };
+
+      window.onunload = function () {
+        // 页面关闭或刷新时执行的代码
+      };
+
+      window.onscroll = function () {
+        // 页面滚动时执行的代码
+      };
+
+      window.onblur = function () {
+        // 窗口失去焦点时执行的代码
+      };
+
+      window.onfocus = function () {
+        // 窗口获得焦点时执行的代码
+      };
+
+      window.onbeforeunload = function () {
+        // 页面关闭或刷新之前执行的代码
       };
     </script>
   </body>
