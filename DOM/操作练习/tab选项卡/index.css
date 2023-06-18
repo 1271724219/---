@@ -1,0 +1,33 @@
+.tab-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .tab-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tab-nav li {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .tab-nav li.active {
+    background-color: #ccc;
+  }
+  
+  .tab-content {
+    margin-top: 10px;
+  }
+  
+  .tab-pane {
+    display: none;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }
