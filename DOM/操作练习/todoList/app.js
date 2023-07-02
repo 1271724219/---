@@ -2,7 +2,7 @@
  * @Author: 123 dian.peng.zhao@gds.ey.com
  * @Date: 2023-06-18 11:31:34
  * @LastEditors: 123 dian.peng.zhao@gds.ey.com
- * @LastEditTime: 2023-06-18 13:49:07
+ * @LastEditTime: 2023-07-02 16:46:41
  * @FilePath: \前端文档\DOM\操作练习\todoList\app.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -59,7 +59,6 @@ class UITodoList {
   }
   //  根据数据创建元素
   createElement() {
-    debugger;
     for (let i = 0; i < this.ui_data.tasks.length; i++) {
       const task = this.ui_data.tasks[i];
       this.createSingleElement(task, i);
@@ -67,20 +66,29 @@ class UITodoList {
   }
   // 创建单个元素
   createSingleElement(task, index) {
+    // 创建一个li元素
     let li = document.createElement("li");
+    // 创建一个input元素
     let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
+    checkbox.type = "checkbox";//设置input的类型为复选框
+    // 设置属性
     checkbox.setAttribute("data-index", index);
+    // 状态改变成task任务的状态
     checkbox.checked = task.completed;
+    // 创建span
     let span = document.createElement("span");
+    // 填充内容
     span.textContent = task.description;
+    // 创建一个按钮
     let button = document.createElement("button");
+    // 设置属性
     button.setAttribute("data-index", index);
+    // 填充内容
     button.textContent = "Remove";
+    // 节点上树
     li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(button);
-    debugger;
     this.doms.taskList.appendChild(li);
   }
 
@@ -121,12 +129,12 @@ todoList.doms.taskList.addEventListener("click", (e) => {
   let target = e.target;
 //   let index = target.getAttribute("data-index");
   let index = [...todoList.doms.taskList.children].indexOf(target.parentNode);
-  if (target.tagName === "BUTTON") {
+  if (target.tagName === "BUTTON") {//删除按钮
     todoList.removeTask(index);
-  } else if (target.tagName === "INPUT") {
-    if (target.checked) {
+  } else if (target.tagName === "INPUT") {//复选框
+    if (target.checked) {//选中状态
       todoList.completeTask(index);
-    } else {
+    } else {//取消状态
       todoList.uncompleteTask(index);
     }
   }
