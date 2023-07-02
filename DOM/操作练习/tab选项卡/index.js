@@ -153,5 +153,6 @@ let ui_main = new UIMain();
 ui_main.doms.tab_nav.addEventListener("click", (e) => {
   // 获取tager索引
   let index = e.target.getAttribute("index");
+  if(!index) return
   ui_main.switchTo(index);
 });
